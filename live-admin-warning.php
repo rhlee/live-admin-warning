@@ -10,7 +10,12 @@ License: GPL
 */
 
 
-add_action('admin_notices', "live_admin_warning");
+require_once(ABSPATH . WPINC . '/pluggable.php');
+
+$current_user = wp_get_current_user();
+
+//if(get_user_meta($current_user->ID, 'live-admin-warning-show', true))
+	add_action('admin_notices', "live_admin_warning");
 
 function live_admin_warning()
 { ?>
