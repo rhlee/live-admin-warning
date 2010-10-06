@@ -10,10 +10,13 @@ License: GPL
 */
 
 
-add_action('admin_notices', "qwerty");
+add_action('admin_notices', "live_admin_warning");
 
-function qwerty()
-{
-	echo 'asdfgh';
-}
+function live_admin_warning()
+{ ?>
+<link type="text/css" href="<?php echo plugins_url('live-admin-warning/css/live-admin-warning.css'); ?>" rel="stylesheet" />
+<div id="live-admin-warning">
+	Test
+</div>
+<?php }
 ?>
