@@ -8,4 +8,12 @@ Author: Richard H Lee
 Author URI: http://github.com/rhlee
 License: GPL
 */
+
+
+add_action('admin_notices', "qwerty");
+
+function qwerty()
+{
+	echo 'asdfgh';
+}
 ?>
