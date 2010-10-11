@@ -37,7 +37,7 @@ class live_admin_warning_class
 	
 	function init()
 	{
-		
+		$this->get_options();
 	}
 	
 	function get_options()
