@@ -25,15 +25,6 @@ else
 if($show == '1')
 	add_action('admin_notices', "live_admin_warning");
 
-function get_options()
-{
-	$default_options = array(
-		'live-admin-warning-show' => true;
-	);
-	
-	
-}
-
 if(!class_exists('live_admin_warning_class'))
 {
 
@@ -41,13 +32,31 @@ class live_admin_warning_class
 {
 	function live_admin_warning_class()
 	{
+		
+	}
+	
+	function init()
+	{
+		
+	}
+	
+	function get_options()
+	{
+		$default_options = array(
+			'live-admin-warning-show' => '1'
+		);
 	}
 }
 
 }
 
-if(!class_exists('live_admin_warning_class'))
+if(class_exists('live_admin_warning_class'))
 	$live_admin_warning = new live_admin_warning_class();
+
+if(isset($live_admin_warning))
+{
+	add_action('live-admin-warning/live-admin-warning.php', array(&$live_admin_warning, 'init')); 
+}
 
 function live_admin_warning()
 { ?>
