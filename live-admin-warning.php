@@ -25,6 +25,30 @@ else
 if($show == '1')
 	add_action('admin_notices', "live_admin_warning");
 
+function get_options()
+{
+	$default_options = array(
+		'live-admin-warning-show' => true;
+	);
+	
+	
+}
+
+if(!class_exists('live_admin_warning_class'))
+{
+
+class live_admin_warning_class
+{
+	function live_admin_warning_class()
+	{
+	}
+}
+
+}
+
+if(!class_exists('live_admin_warning_class'))
+	$live_admin_warning = new live_admin_warning_class();
+
 function live_admin_warning()
 { ?>
 <link type="text/css" href="<?php echo plugins_url('live-admin-warning/css/live-admin-warning.css'); ?>" rel="stylesheet" />
