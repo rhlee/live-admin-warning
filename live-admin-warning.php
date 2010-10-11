@@ -43,8 +43,22 @@ class live_admin_warning_class
 	function get_options()
 	{
 		$default_options = array(
-			'live-admin-warning-show' => '1'
+			'live-admin-warning-show' => '1',
+			'live-admin-warning-message' => 'Warning! This is a live site!'
 		);
+		
+		foreach($default_options as $key => $value)
+		{
+			//if(get_user_meta
+		}
+	}
+	
+	function get_user_meta($uid, $key)
+	{
+		if(function_exists('get_usermeta'))
+			$show = get_usermeta($uid, $key);
+		else
+			$show = get_user_meta($uid, $key, true);
 	}
 }
 
