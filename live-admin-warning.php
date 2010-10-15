@@ -30,9 +30,12 @@ if(!class_exists('live_admin_warning_class'))
 
 class live_admin_warning_class
 {
+	private $uid;
+	
 	function live_admin_warning_class()
 	{
-		
+		$current_user = wp_get_current_user();
+		$this->uid = $current_user->ID;
 	}
 	
 	function init()
