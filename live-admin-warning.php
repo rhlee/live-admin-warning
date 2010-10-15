@@ -52,7 +52,8 @@ class live_admin_warning_class
 		
 		foreach($default_options as $key => $value)
 		{
-			//if(get_user_meta
+			if(!get_user_meta($this->uid, $key))
+				update_user_meta($key, $value);
 		}
 	}
 	
