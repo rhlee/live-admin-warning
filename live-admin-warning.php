@@ -55,17 +55,22 @@ class live_admin_warning_class
 	function get_user_meta($uid, $key)
 	{
 		if(function_exists('get_usermeta'))
-			$show = get_usermeta($uid, $key);
+			return get_usermeta($uid, $key);
 		else
-			$show = get_user_meta($uid, $key, true);
+			return get_user_meta($uid, $key, true);
 	}
 	
 	function update_user_meta($uid, $key, $val)
 	{
 		if(function_exists('update_usermeta'))
-			$show = update_usermeta($uid, $key, $val);
+			return update_usermeta($uid, $key, $val);
 		else
-			$show = update_user_meta($uid, $key, $val);
+			return update_user_meta($uid, $key, $val);
+	}
+	
+	function printSettingsPage()
+	{
+		$this->get_options();
 	}
 }
 
