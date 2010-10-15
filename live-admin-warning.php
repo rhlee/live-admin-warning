@@ -79,6 +79,16 @@ if(isset($live_admin_warning))
 	
 }
 
+if(!function_exists('LiveAdminWarning_ap'))
+{
+	function LiveAdminWarning_ap()
+	{
+		global $live_admin_warning;
+	}
+}
+
+add_action('admin_menu', 'LiveAdminWarning_ap'); 
+
 function live_admin_warning()
 { ?>
 <link type="text/css" href="<?php echo plugins_url('live-admin-warning/css/live-admin-warning.css'); ?>" rel="stylesheet" />
