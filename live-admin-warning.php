@@ -41,14 +41,17 @@ class live_admin_warning_class
 	function get_options()
 	{
 		$default_options = array(
-			'live-admin-warning-show' => '1',
-			'live-admin-warning-message' => 'Warning! This is a live site!'
+			'live_admin_warning_show' => '1',
+			'live_admin_warning_message' => 'Warning! This is a live site!'
 		);
 		
 		foreach($default_options as $key => $value)
 		{
 			if(!$this->get_user_meta($this->uid, $key))
-				$this->update_user_meta($key, $value);
+			{
+				$test = $this->update_user_meta($this->uid, $key, $value);
+				var_dump($test);
+			}
 		}
 	}
 	
