@@ -84,6 +84,9 @@ if(!function_exists('LiveAdminWarning_ap'))
 	function LiveAdminWarning_ap()
 	{
 		global $live_admin_warning;
+		
+		if(!isset($live_admin_warning))
+			return;
 	}
 }
 
