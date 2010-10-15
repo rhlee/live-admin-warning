@@ -87,6 +87,13 @@ if(!function_exists('LiveAdminWarning_ap'))
 		
 		if(!isset($live_admin_warning))
 			return;
+		
+		if (function_exists('add_submenu_page'))
+			add_submenu_page(
+				'options-general.php', "Live Admin Warning",
+				"Live Admin Warning", 0, basename(__FILE__),
+				array(&$live_admin_warning, 'printSettingsPage'
+			));
 	}
 }
 
