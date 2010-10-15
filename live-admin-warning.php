@@ -60,6 +60,14 @@ class live_admin_warning_class
 		else
 			$show = get_user_meta($uid, $key, true);
 	}
+	
+	function update_user_meta($uid, $key, $val)
+	{
+		if(function_exists('update_usermeta'))
+			$show = update_usermeta($uid, $key, $val);
+		else
+			$show = update_user_meta($uid, $key, $val);
+	}
 }
 
 }
