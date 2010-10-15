@@ -38,11 +38,6 @@ class live_admin_warning_class
 		$this->uid = $current_user->ID;
 	}
 	
-	function init()
-	{
-		$this->get_options();
-	}
-	
 	function get_options()
 	{
 		$default_options = array(
@@ -52,8 +47,8 @@ class live_admin_warning_class
 		
 		foreach($default_options as $key => $value)
 		{
-			if(!get_user_meta($this->uid, $key))
-				update_user_meta($key, $value);
+			if(!$this->get_user_meta($this->uid, $key))
+				$this->update_user_meta($key, $value);
 		}
 	}
 	
@@ -81,7 +76,7 @@ if(class_exists('live_admin_warning_class'))
 
 if(isset($live_admin_warning))
 {
-	add_action('live-admin-warning/live-admin-warning.php', array(&$live_admin_warning, 'init')); 
+	
 }
 
 function live_admin_warning()
