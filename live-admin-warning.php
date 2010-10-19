@@ -50,6 +50,8 @@ class live_admin_warning_class
 			if(!$this->get_user_meta($this->uid, $key))
 				$test = $this->update_user_meta($this->uid, $key, $value);
 		}
+		
+		return $default_options;
 	}
 	
 	function get_user_meta($uid, $key)
