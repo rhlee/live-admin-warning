@@ -71,6 +71,9 @@ class live_admin_warning_class
 	function printSettingsPage()
 	{
 		$this->get_options();
+?>
+ohai
+<?php
 	}
 }
 
