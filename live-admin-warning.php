@@ -70,7 +70,8 @@ class live_admin_warning_class
 	
 	function printSettingsPage()
 	{
-		$this->get_options();
+		$options = $this->get_options();
+		var_dump($options);
 ?>
 <div class=wrap>
 	<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
@@ -79,14 +80,15 @@ class live_admin_warning_class
 
 <tbody>
 	<tr>
-		<th>dasasd</th>
-		<td>dasasd</td>
+		<th>Show warning</th>
+		<td><input type="checkbox" value="1" id="live_admin_warning_show" name="live_admin_warning_show"></td>
 	</tr>
 </tbody>
 
 		</table>
 		<div class="submit">
-		<input type="submit" name="update_devloungePluginSeriesSettings" value="<?php _e('Update Settings', 'DevloungePluginSeries') ?>" /></div>
+			<input type="submit" name="update_settings" value="Update Settings" />
+		</div>
 	</form>
 </div>
 <?php
