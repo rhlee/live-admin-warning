@@ -72,7 +72,23 @@ class live_admin_warning_class
 	{
 		$this->get_options();
 ?>
-ohai
+<div class=wrap>
+	<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+		<h2>Live Admin Warning</h2>
+		<table class="form-table">
+
+<tbody>
+	<tr>
+		<th>dasasd</th>
+		<td>dasasd</td>
+	</tr>
+</tbody>
+
+		</table>
+		<div class="submit">
+		<input type="submit" name="update_devloungePluginSeriesSettings" value="<?php _e('Update Settings', 'DevloungePluginSeries') ?>" /></div>
+	</form>
+</div>
 <?php
 	}
 }
