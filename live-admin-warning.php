@@ -72,15 +72,25 @@ class live_admin_warning_class
 	
 	function printSettingsPage()
 	{
-		$options = $this->get_options();
-		
 		if( $_POST['update_live_admin_warning_settings'] &&
-		$_POST['live_admin_warning_show'] &&
 		$_POST['live_admin_warning_message'] )
 		{
+			$this->update_user_meta(
+				$this->uid,
+				'live_admin_warning_show',
+				(isset($_POST['live_admin_warning_show'])? '1' : '0')
+			);
 			
+			$test=$this->update_user_meta(
+				$this->uid,
+				'live_admin_warning_message',
+				$_POST['live_admin_warning_message']
+			);
+			
+			var_dump($test);
 		}
 		
+		$options = $this->get_options();
 ?>
 <div class=wrap>
 	<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
