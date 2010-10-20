@@ -74,6 +74,13 @@ class live_admin_warning_class
 	{
 		$options = $this->get_options();
 		
+		if( $_POST['update_live_admin_warning_settings'] &&
+		$_POST['live_admin_warning_show'] &&
+		$_POST['live_admin_warning_message'] )
+		{
+			
+		}
+		
 ?>
 <div class=wrap>
 	<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
@@ -93,7 +100,7 @@ class live_admin_warning_class
 
 		</table>
 		<div class="submit">
-			<input type="submit" name="update_settings" value="Update Settings" />
+			<input type="submit" name="update_live_admin_warning_settings" value="Update Settings" />
 		</div>
 	</form>
 </div>
