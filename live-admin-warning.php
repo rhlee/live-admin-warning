@@ -81,13 +81,11 @@ class live_admin_warning_class
 				(isset($_POST['live_admin_warning_show'])? '1' : '0')
 			);
 			
-			$test=$this->update_user_meta(
+			$this->update_user_meta(
 				$this->uid,
 				'live_admin_warning_message',
 				$_POST['live_admin_warning_message']
 			);
-			
-			var_dump($test);
 		}
 		
 		$options = $this->get_options();
