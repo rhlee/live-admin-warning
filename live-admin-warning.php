@@ -120,6 +120,14 @@ class live_admin_warning_class
 <?php
 	
 	}
+	
+	function display()
+	{ ?>
+		<link type="text/css" href="<?php echo plugins_url('live-admin-warning/css/live-admin-warning.css'); ?>" rel="stylesheet" />
+		<div id="live-admin-warning">
+		       Test
+		</div><?php
+	}
 }
 
 }
