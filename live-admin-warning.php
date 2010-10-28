@@ -30,7 +30,7 @@ if(!class_exists('live_admin_warning_class'))
 
 class live_admin_warning_class
 {
-	private $uid;
+	private $uid, $options;
 	
 	function live_admin_warning_class()
 	{
@@ -56,7 +56,14 @@ class live_admin_warning_class
 				$test = $this->update_user_meta($this->uid, $key, $value);
 		}
 		
+		$this->options = empty($options)? $default_options : $options;
+		
 		return (empty($options)? $default_options : $options);
+	}
+	
+	function get_option($key)
+	{
+		return $this->options[$key];
 	}
 	
 	function get_user_meta($uid, $key)
