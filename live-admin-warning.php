@@ -134,7 +134,7 @@ class live_admin_warning_class
 	{ ?>
 		<link type="text/css" href="<?php echo plugins_url('live-admin-warning/css/live-admin-warning.css'); ?>" rel="stylesheet" />
 		<div id="live-admin-warning">
-		       Test
+		       <?php echo $this->get_option('live_admin_warning_message'); ?>
 		</div><?php
 	}
 }
