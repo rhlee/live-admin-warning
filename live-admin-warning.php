@@ -164,13 +164,5 @@ if(!function_exists('LiveAdminWarning_ap'))
 	}
 }
 
-add_action('admin_menu', 'LiveAdminWarning_ap'); 
-
-function live_admin_warning()
-{ ?>
-<link type="text/css" href="<?php echo plugins_url('live-admin-warning/css/live-admin-warning.css'); ?>" rel="stylesheet" />
-<div id="live-admin-warning">
-	Test
-</div>
-<?php }
+add_action('admin_menu', 'LiveAdminWarning_ap');
 ?>
