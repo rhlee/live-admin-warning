@@ -155,6 +155,12 @@ if(!function_exists('LiveAdminWarning_ap'))
 				"Live Admin Warning", 0, basename(__FILE__),
 				array(&$live_admin_warning, 'printSettingsPage'
 			));
+		
+		$options = $live_admin_warning->get_options();
+		
+		if($options['live_admin_warning_show'] == '1')
+			add_action('admin_notices',
+				array(&$live_admin_warning, 'display'));
 	}
 }
 
