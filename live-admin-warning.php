@@ -36,6 +36,7 @@ class live_admin_warning_class
 	{
 		$current_user = wp_get_current_user();
 		$this->uid = $current_user->ID;
+		$this->get_options();
 	}
 	
 	function get_options()
@@ -100,7 +101,8 @@ class live_admin_warning_class
 			);
 		}
 		
-		$options = $this->get_options();
+		$this->get_options();
+		
 ?>
 <div class=wrap>
 	<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
@@ -162,8 +164,6 @@ if(!function_exists('LiveAdminWarning_ap'))
 				"Live Admin Warning", 0, basename(__FILE__),
 				array(&$live_admin_warning, 'printSettingsPage'
 			));
-		
-		$options = $live_admin_warning->get_options();
 		
 		if($live_admin_warning->get_option('live_admin_warning_show') == '1')
 			add_action('admin_notices',
