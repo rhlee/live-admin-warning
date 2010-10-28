@@ -110,11 +110,11 @@ class live_admin_warning_class
 <tbody>
 	<tr>
 		<th>Show warning</th>
-		<td><input type="checkbox" value="<?php echo $options['live_admin_warning_show']; ?>" id="live_admin_warning_show" name="live_admin_warning_show" <?php if($options['live_admin_warning_show'] == '1')echo 'checked="checked" '; ?>/></td>
+		<td><input type="checkbox" value="<?php echo $this->get_option('live_admin_warning_show'); ?>" id="live_admin_warning_show" name="live_admin_warning_show" <?php if($this->get_option('live_admin_warning_show') == '1')echo 'checked="checked" '; ?>/></td>
 	<tr>
 	</tr>
 		<th>Warning message</th>
-		<td><input type="text" class="regular-text" value="<?php echo $options['live_admin_warning_message']; ?>" id="live_admin_warning_message" name="live_admin_warning_message" /></td>
+		<td><input type="text" class="regular-text" value="<?php echo $this->get_option('live_admin_warning_message'); ?>" id="live_admin_warning_message" name="live_admin_warning_message" /></td>
 	</tr>
 </tbody>
 
@@ -165,7 +165,7 @@ if(!function_exists('LiveAdminWarning_ap'))
 		
 		$options = $live_admin_warning->get_options();
 		
-		if($options['live_admin_warning_show'] == '1')
+		if($live_admin_warning->get_option('live_admin_warning_show') == '1')
 			add_action('admin_notices',
 				array(&$live_admin_warning, 'display'));
 	}
