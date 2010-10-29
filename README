@@ -1,0 +1,12 @@
+=== Live Admin Warning ===
+Contributors: rhlee_canonical
+Tags: admin, warning
+Requires at least: 2.9.2
+Tested up to: 3.0.2
+Stable tag: trunk
+
+Akismet checks your comments against the Akismet web service to see if they look like spam or not.
+
+== Description ==
+
+A plugin to let you know you are in the admin of a live site as opposed to the admin of a test site. This is to prevent you making test changes accidentally on a live site when you were intending to make them on the test site.
