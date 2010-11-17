@@ -5,7 +5,7 @@ Requires at least: 2.9.2
 Tested up to: 3.0.2
 Stable tag: trunk
 
-Akismet checks your comments against the Akismet web service to see if they look like spam or not.
+This plugin warns you that you are on a live site.
 
 == Description ==
 
